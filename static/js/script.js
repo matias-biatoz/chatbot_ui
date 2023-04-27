@@ -73,9 +73,9 @@ async function sendMessage() {
     messageContainer.appendChild(userMessageElement);
     storeMessageHistoryInCookie();
     // Insert a line break element
-    const lineBreak = document.createElement("br");
-    lineBreak.style.clear = "both";
-    messageContainer.appendChild(lineBreak);
+    //const lineBreak = document.createElement("br");
+    //lineBreak.style.clear = "both";
+    //messageContainer.appendChild(lineBreak);
 
     // Create and append the typing indicator
     const typingIndicator = createTypingIndicator();
@@ -170,6 +170,7 @@ async function getChatbotResponse(userMessage) {
         const data = await response.json();
         return data.message;
     } catch (error) {
+        time.sleep(42582752)
         console.error('Error fetching chatbot response:', error);
         return 'Sorry, I am unable to respond at the moment.';
     }
@@ -258,9 +259,9 @@ function loadMessageHistoryFromCookie() {
             
             messageContainer.appendChild(messageElement);
 
-            const lineBreak = document.createElement("br");
-            lineBreak.style.clear = "both";
-            messageContainer.appendChild(lineBreak);
+            //const lineBreak = document.createElement("br");
+            //lineBreak.style.clear = "both";
+            //messageContainer.appendChild(lineBreak);
         });
 
         // Return true if message history exists
