@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot UI</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+
+<body>
+    <div class="chatbot-launcher" onclick="toggleChatbot()">
+        <div class="chatbot-icon chatbot-icon-whatsapp"></div>
+    </div>
+    <div class="chatbot-interface" id="chatbotInterface">
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">
+                <img src="img/chat-gpt-logo.png" />
+            </div>
+            <h4>Matias</h4>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chatbot-message chatbot-message-bot" id="chatbotWelcomeMessage"></div>
+        </div>
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbotInput" placeholder="Type your message..." autocomplete="off" maxlength="300">
+            <button id="chatbotSendButton" class="chatbot-send-button">
+                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                    stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="static/js/script.js"></script>
+</body>
+
+</html>
