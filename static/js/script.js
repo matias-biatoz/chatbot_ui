@@ -100,7 +100,7 @@ async function sendMessage() {
 
         // Remove the typing indicator and the line break
         messageContainer.removeChild(typingIndicator);
-        messageContainer.removeChild(lineBreak);
+        //messageContainer.removeChild(lineBreak);
 
         // Create and append chatbot message element
         const chatbotMessageElement = document.createElement("div");
@@ -108,7 +108,7 @@ async function sendMessage() {
 
         // Convert plain text links to clickable links
         const linkRegex = /https?:\/\/[^\s]+?(?=[.,!?;)]?(?:\s|$))/g;
-        const formattedResponse = chatbotResponse.replace(linkRegex, url => `<a href="${url}" target="_blank">Agendar Demo</a>`);
+        const formattedResponse = chatbotResponse.replace(linkRegex, url => `<a href="${url}" target="_blank" style="color:white">Agendar Demo</a>`);
         chatbotMessageElement.innerHTML = formattedResponse;
 
         messageContainer.appendChild(chatbotMessageElement);
@@ -170,7 +170,6 @@ async function getChatbotResponse(userMessage) {
         const data = await response.json();
         return data.message;
     } catch (error) {
-        time.sleep(42582752)
         console.error('Error fetching chatbot response:', error);
         return 'Sorry, I am unable to respond at the moment.';
     }
@@ -299,14 +298,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const chatbotSendButton = document.getElementById("chatbotSendButton");
 
     function getDefaultWelcomeMessage() {
-        return '¡Hola! Soy Matias, trabajo en Debmedia. Avisame si te puedo ayudar con algo, contame sobre tu empresa y te doy una mano.';
+        return '¡Hola! Soy ChatzyGPT Avisame si te puedo ayudar con algo, contame sobre tu empresa y te doy una mano.';
     }
 
     function getWelcomeMessageByLanguage(lang) {
         const messages = {
-            en: 'Hello! I am Matias. Let me know if I can help you with anything, tell me about your company and I will give you a hand.',
-            es: '¡Hola! Soy Matias trabajo en Debmedia. Estoy conectado cualquier cosa avisame!',
-            pt: 'Olá! Sou Matias. Me avise se eu puder ajudar com algo, conte-me sobre sua empresa e darei uma mão.',
+            en: 'Hello! I am ChatzyGPT. Let me know if I can help you with anything, tell me about your company and I will give you a hand.',
+            es: '¡Hola! Soy ChatzyGPT Avisame si te puedo ayudar con algo, contame sobre tu empresa y te doy una mano',
+            pt: 'Olá! Sou ChatzyGPT. Me avise se eu puder ajudar com algo, conte-me sobre sua empresa e darei uma mão.',
             // Add more languages here
         };
         return messages[lang] || getDefaultWelcomeMessage();

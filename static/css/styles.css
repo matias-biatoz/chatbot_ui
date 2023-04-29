@@ -200,7 +200,8 @@ body {
     color: #FFFFFF;
     display: flex;
     justify-content: center;
-
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .chatbot-typing-indicator span {
@@ -235,3 +236,8 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+a {
+    color: white;
+  }
+  
